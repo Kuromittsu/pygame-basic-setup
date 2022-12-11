@@ -27,18 +27,21 @@ class Core():
 
     def _update(self):
         self.surfaces._change_title(f"{self.game.title} | ({int(self.game.fps)})" if self.show_fps else self.game.title)
+        self.game.update()
 
     def _draw(self):
         self.surfaces.clear_base()
         self.surfaces.clear_game()
+        self.game.draw()
 
     def _after_draw(self):
-        pass
+        self.game.after_draw()
 
     def _before_flip(self):
         self.surfaces._before_flip()
+        self.game.before_flip()
 
-    # Util
+    # utility
     def _delta_time(self):
         tick = pg.time.get_ticks()
         self.delta_time = (tick - self.tick_last_frame) / 1000.0
@@ -83,7 +86,7 @@ class Core():
 
     # custom
     def setup(self):
-        pass
+        self.game.setup()
 
     def update(self):
         pass
