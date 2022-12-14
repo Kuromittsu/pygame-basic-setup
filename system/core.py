@@ -1,7 +1,9 @@
 import pygame as pg, sys
-from settings import *
+
+from system.settings import *
+from system.surfaces import Surfaces
+
 from game import Game
-from surfaces import Surfaces
 
 class Core():
 
@@ -20,9 +22,9 @@ class Core():
         self._setup()
         self.setup()
 
-    # default
+    # default callback
     def _setup(self):
-        self.game = Game(self.title)
+        self.game = Game(self, self.title)
         self.surfaces = Surfaces()
 
     def _update(self):
@@ -41,7 +43,7 @@ class Core():
         self.surfaces._before_flip()
         self.game.before_flip()
 
-    # utility
+    # core utility
     def _delta_time(self):
         tick = pg.time.get_ticks()
         self.delta_time = (tick - self.tick_last_frame) / 1000.0
@@ -76,7 +78,7 @@ class Core():
             self._before_flip()
             self.before_flip()
 
-            self.surfaces.flip()
+            self.surfaces.update()
 
     def run(self):
         pg.init()
@@ -84,18 +86,18 @@ class Core():
         pg.quit()
         sys.exit()
 
-    # custom
+    # custom callback
     def setup(self):
         self.game.setup()
 
     def update(self):
-        pass
+        self.game.update()
 
     def draw(self):
-        pass
+        self.game.draw()
 
     def after_draw(self):
-        pass
+        self.game.after_draw()
 
     def before_flip(self):
-        pass
+        self.game.before_flip()

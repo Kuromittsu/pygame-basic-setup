@@ -1,5 +1,5 @@
-from core import Core
+from system.engine import Engine
 
 if __name__ == '__main__':
-    core = Core('Platformer Test')
-    core.run()
+    engine = Engine('Platformer Test')
+    engine.init()

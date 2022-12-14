@@ -1,5 +1,6 @@
 import pygame as pg
-from settings import *
+
+from system.settings import *
 
 class Surfaces():
 
@@ -21,4 +22,11 @@ class Surfaces():
         self.game.fill('#55E6C1')
 
     def flip(self):
+        # better use update() function
         pg.display.flip()
+
+    def update(self):
+        # according to the documentation,
+        # the update() function is an optimization
+        # of the flip() function
+        pg.display.update()

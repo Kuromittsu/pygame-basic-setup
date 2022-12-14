@@ -1,7 +1,8 @@
 
 class Game():
 
-    def __init__(self, title):
+    def __init__(self, core, title):
+        self.core = core
         self.title = title
         self.fps = 0
 
