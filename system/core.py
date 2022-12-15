@@ -2,6 +2,7 @@ import pygame as pg, sys
 
 from system.settings import *
 from system.surfaces import Surfaces
+from system.camera import Camera
 
 from game import Game
 
@@ -24,6 +25,7 @@ class Core():
 
     # default callback
     def _setup(self):
+        self.camera = Camera(self)
         self.game = Game(self, self.title)
         self.surfaces = Surfaces()
 

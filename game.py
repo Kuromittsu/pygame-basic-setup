@@ -1,3 +1,4 @@
+from levels.test_camera import Test_camera
 
 class Game():
 
@@ -7,13 +8,13 @@ class Game():
         self.fps = 0
 
     def setup(self):
-        pass
+        self.test_camera = Test_camera(self.core)
 
     def update(self):
-        pass
+        self.test_camera.update()
 
     def draw(self):
-        pass
+        self.test_camera.draw()
 
     def after_draw(self):
         pass
