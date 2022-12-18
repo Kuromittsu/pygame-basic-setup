@@ -3,7 +3,7 @@ class Test_camera():
 
     def __init__(self, core):
         self.core = core
-    
+
     def setup(self):
         pass
 

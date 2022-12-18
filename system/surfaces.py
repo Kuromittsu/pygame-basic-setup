@@ -2,12 +2,13 @@ import pygame as pg
 
 from system.settings import *
 
+
 class Surfaces():
 
     def __init__(self):
         self.base = pg.display.set_mode(FULLSCREEN)
         self.game = pg.Surface(FULLSCREEN)
-        self.game_rect = self.game.get_rect(topleft = (0, 0))
+        self.game_rect = self.game.get_rect(topleft=(0, 0))
 
     def _before_flip(self):
         self.base.blit(self.game, (0, 0))

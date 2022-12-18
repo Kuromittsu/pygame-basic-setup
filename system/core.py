@@ -1,10 +1,12 @@
-import pygame as pg, sys
+import pygame as pg
+import sys
 
 from system.settings import *
 from system.surfaces import Surfaces
 from system.camera import Camera
 
 from game import Game
+
 
 class Core():
 
@@ -30,7 +32,8 @@ class Core():
         self.surfaces = Surfaces()
 
     def _update(self):
-        self.surfaces._change_title(f"{self.game.title} | ({int(self.game.fps)})" if self.show_fps else self.game.title)
+        self.surfaces._change_title(
+            f"{self.game.title} | ({int(self.game.fps)})" if self.show_fps else self.game.title)
         self.game.update()
 
     def _draw(self):
