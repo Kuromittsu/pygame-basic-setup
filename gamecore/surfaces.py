@@ -1,6 +1,6 @@
 import pygame as pg
 
-from system.settings import *
+from gamecore.settings import *
 
 
 class Surfaces():
@@ -13,7 +13,7 @@ class Surfaces():
     def _before_flip(self):
         self.base.blit(self.game, (0, 0))
 
-    def _change_title(self, title):
+    def _change_title(self, title: str):
         pg.display.set_caption(title)
 
     def clear_base(self):
@@ -31,3 +31,9 @@ class Surfaces():
         # the update() function is an optimization
         # of the flip() function
         pg.display.update()
+
+    def render_to_game(self, surface: pg.Surface, position: tuple):
+        self.game.blit(surface, position)
+
+    def render_to_base(self, surface: pg.Surface, position: tuple):
+        self.base.blit(surface, position)

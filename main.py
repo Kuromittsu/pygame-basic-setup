@@ -1,4 +1,4 @@
-from system.engine import Engine
+from gamecore.engine import Engine
 
 
 def main():

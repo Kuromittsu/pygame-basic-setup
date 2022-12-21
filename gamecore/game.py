@@ -1,9 +1,9 @@
-from levels.test_camera import Test_camera
+from gamecore.levels.test_camera import Test_camera
 
 
 class Game():
 
-    def __init__(self, core, title):
+    def __init__(self, core, title: str):
         self.core = core
         self.title = title
         self.fps = 0

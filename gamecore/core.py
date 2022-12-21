@@ -1,16 +1,15 @@
 import pygame as pg
 import sys
 
-from system.settings import *
-from system.surfaces import Surfaces
-from system.camera import Camera
-
-from game import Game
+from gamecore.settings import *
+from gamecore.surfaces import Surfaces
+from gamecore.camera import Camera
+from gamecore.game import Game
 
 
 class Core():
 
-    def __init__(self, title):
+    def __init__(self, title: str):
         self.title = title
         self.event = None
         self.clock = pg.time.Clock()
