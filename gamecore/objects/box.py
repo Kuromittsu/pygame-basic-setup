@@ -14,6 +14,9 @@ class Box():
     def setup(self):
         self.image.fill(self.fill)
 
+    def move(self, position):
+        self.rect.topleft += position
+
     def update(self):
         pass
 

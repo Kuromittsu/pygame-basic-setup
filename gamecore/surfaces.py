@@ -37,3 +37,6 @@ class Surfaces():
 
     def render_to_base(self, surface: pg.Surface, position: tuple):
         self.base.blit(surface, position)
+
+    def game_size(self):
+        return [self.game.get_width(), self.game.get_height()]

@@ -26,9 +26,9 @@ class Core():
 
     # default callback
     def _setup(self):
+        self.surfaces = Surfaces()
         self.camera = Camera(self)
         self.game = Game(self, self.title)
-        self.surfaces = Surfaces()
 
     def _update(self):
         self.surfaces._change_title(
